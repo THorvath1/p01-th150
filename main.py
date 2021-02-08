@@ -8,7 +8,6 @@ my_url = 'https://www.newegg.com/Laptops-Notebooks/Category/ID-223?Tid=17489'
 # loading connection/grabbing page
 xClient = ureq(my_url)
 p_html = = xClient.read()
-uClient.close()
 
 # html parsing
 page_soup = BeautifulSoup(p_html, "html.parser")
@@ -37,6 +36,5 @@ for container in containers:
 
 	f.write(brand + ", " + product_name.replace(",", "|") + ", " + shipping + "\n")
 
-	f.close()
 
  
