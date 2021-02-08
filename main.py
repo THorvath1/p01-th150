@@ -7,7 +7,7 @@ my_url = 'https://www.newegg.com/Laptops-Notebooks/Category/ID-223?Tid=17489'
 
 # loading connection/grabbing page
 xClient = ureq(my_url)
-p_html = = xClient.read()
+p_html = xClient.read()
 
 # html parsing
 page_soup = BeautifulSoup(p_html, "html.parser")
