@@ -1,12 +1,14 @@
-import requests
+from urllib.request import urlopen as ureq
 from bs4 import BeautifulSoup
-import csv
+import requests
+import os, os.path, csv
 
 my_url = 'https://www.newegg.com/Laptops-Notebooks/Category/ID-223?Tid=17489'
 
 # loading connection/grabbing page
-xClient = requests.get(my_url)
-
+xClient = ureq(my_url)
+p_html = = xClient.read()
+uClient.close()
 
 # html parsing
 page_soup = BeautifulSoup(p_html, "html.parser")
@@ -17,7 +19,7 @@ containers = page_soup.findAll("div", {"class":"item-container"})
 filename = "laptops.csv"
 f = open(filename, "w")
 headers = "brand", "product_name", "shipping\n"
-f.write(headers)
+f.write("headers")
 
 # for loop that extracts titles of laptops
 for container in containers:
